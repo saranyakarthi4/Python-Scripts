@@ -1,28 +1,22 @@
+list1 = [45,12,89,34,9,6]
+list1.sort()
+#print list1 [6,9,12,34,45,89] to find 44
+data = 45
+i = 0
+n= len(list1)
+#print (n)
+while (i < n):
+	mid = int((i+n)/2) 
+	print (list1[mid])
+	if (list1[mid] == data):
+		print ("match found at {} ".format(i))
+		break
+	elif (list1[mid] < data):
+		i = mid- 1
+	else:
+		n = mid + 1	 
+		print ("condi 3")
 
-def binary_search(list_of_numbers, query_item):
-    #Set index of the first item in the list and an index of the last item in the list
-    index_first = 0
-    index_last = len(list_of_numbers)-1
-    #Set the found variable to False
-    found = False
 
-    while index_first <= index_last and not found: #Check if the index_first is less than or equal to the index_last
-        
-        middle_index = int((index_first+index_last)/2) #using index_first and index_last find the middle index
 
-        if query_item == list_of_numbers[middle_index]: #Check if the middle element is equal to the query_item     
-            found = True
-            break
-        else:
-            if query_item < list_of_numbers[middle_index]:
-                index_last = middle_index#If the query_item is less than the middle item, use the index_last to eliminate the upper part of the list
-            else:
-                index_first = middle_index + 1
 
-    #Return the found boolean variable
-    return found
-
-#Do not change code below this line
-test_list = [4, 13, 22, 28, 34, 117, 943, 1032, 4222]
-print(binary_search(test_list, 4222))
-print(binary_search(test_list, 33))
